@@ -1,8 +1,10 @@
 mount -t tmpfs tmpfs /tmp/
 
 cd /tmp
-wget https://download2.mikrotik.com/routeros/6.39.3/chr-6.39.3.img.zip
+wget https://download.mikrotik.com/routeros/6.43.8/chr-6.43.8.img.zip
 
-unzip chr-6.39.3.img.zip
-dd if=chr-6.39.3.img of=/dev/vda bs=4M oflag=sync
+unzip chr-6.43.8.img.zip
+dd if=chr-6.43.8.img of=/dev/vda bs=4M oflag=sync
 
+echo 1 > /proc/sys/kernel/sysrq 
+echo b > /proc/sysrq-trigger
